@@ -1,7 +1,7 @@
 import axios from "axios";
 import config from "../settings.json";
 
-const host = "http://api.giphy.com";
+const host = "https://api.giphy.com";
 const params = {
   params: {
     api_key: config.API_KEY
