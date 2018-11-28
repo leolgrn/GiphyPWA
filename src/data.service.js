@@ -1,10 +1,10 @@
 import axios from "axios";
-import config from "../global.config";
+import config from "../settings.json";
 
 const host = "http://api.giphy.com";
 const params = {
   params: {
-    api_key: config.APIKEY
+    api_key: config.API_KEY
   }
 };
 
