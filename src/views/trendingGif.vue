@@ -1,5 +1,5 @@
 <template>
-  <div><iframe v-for="gif in gifs" :src="gif.embed_url"/></div>
+  <div><iframe v-for="gif in gifs" :key="gif.id" :src="gif.embed_url"/></div>
 </template>
 
 <script>
