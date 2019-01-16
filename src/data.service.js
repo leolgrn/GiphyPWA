@@ -1,9 +1,9 @@
 import axios from 'axios';
 
-const host = process.env.VUE_APP_GIPHY_API_HOST || process.env.GIPHY_API_HOST;
+const host = process.env.VUE_APP_GIPHY_API_HOST;
 const params = {
     params: {
-        api_key: process.env.VUE_APP_GIPHY_API_KEY || process.env.GIPHY_API_KEY,
+        api_key: process.env.VUE_APP_GIPHY_API_KEY,
     },
 };
 
