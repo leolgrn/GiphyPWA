@@ -1,10 +1,9 @@
 import axios from 'axios';
-import config from '../settings.json';
 
-const host = 'https://api.giphy.com';
+const host = process.env.VUE_APP_GIPHY_API_HOST || process.env.GIPHY_API_HOST;
 const params = {
     params: {
-        api_key: config.API_KEY,
+        api_key: process.env.VUE_APP_GIPHY_API_KEY || process.env.GIPHY_API_KEY,
     },
 };
 
