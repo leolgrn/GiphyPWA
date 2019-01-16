@@ -1,29 +1,25 @@
-# giphypwa
+# GiphyPWA
 
-## Project setup
-```
-npm install
-```
+## Installation (local/prod)
 
-### Compiles and hot-reloads for development
-```
-npm run serve
+```sh
+yarn
 ```
 
-### Compiles and minifies for production
-```
-npm run build
+## Run (local/prod)
+
+```sh
+yarn run start
 ```
 
-### Run your tests
-```
-npm run test
+## Development (local)
+
+```sh
+yarn run serve # with hot reload
 ```
 
-### Lints and fixes files
-```
-npm run lint
-```
+## Test env (test)
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+```sh
+yarn run lint
+```
