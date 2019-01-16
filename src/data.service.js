@@ -1,21 +1,20 @@
-import axios from "axios";
-import config from "../settings.json";
+import axios from 'axios';
 
-const host = "https://api.giphy.com";
+const host = process.env.VUE_APP_GIPHY_API_HOST || process.env.GIPHY_API_HOST;
 const params = {
-  params: {
-    api_key: config.API_KEY
-  }
+    params: {
+        api_key: process.env.VUE_APP_GIPHY_API_KEY || process.env.GIPHY_API_KEY,
+    },
 };
 
 export default {
-  getRandomGif() {
-    return axios.get(host + "/v1/gifs/random", params);
-  },
-  getTrendingGif() {
-    return axios.get(host + "/v1/gifs/trending", params);
-  },
-  getRandomSticker() {
-    return axios.get(host + "/v1/stickers/random", params)
-  }
+    getRandomGif() {
+        return axios.get(host + '/v1/gifs/random', params);
+    },
+    getTrendingGif() {
+        return axios.get(host + '/v1/gifs/trending', params);
+    },
+    getRandomSticker() {
+        return axios.get(host + '/v1/stickers/random', params);
+    },
 };
