@@ -17,8 +17,7 @@ module.exports = {
             "tabWidth": 4,
             "printWidth": 120
         }],
-        "no-console": process.env.NODE_ENV === "production" ? "error" : "off",
-        "no-debugger": process.env.NODE_ENV === "production" ? "error" : "off"
+        "no-console": "off"
     },
     parserOptions: {
         parser: "babel-eslint"
