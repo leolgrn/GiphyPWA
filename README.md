@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/leolgrn/GiphyPWA.svg?branch=master)](https://travis-ci.org/leolgrn/GiphyPWA)
+
 # GiphyPWA
 
 ## Installation (local/prod)
@@ -9,17 +11,23 @@ yarn
 ## Run (local/prod)
 
 ```sh
-yarn run start
+yarn start
 ```
 
 ## Development (local)
 
 ```sh
-yarn run serve # with hot reload
+yarn serve # with hot reload
 ```
 
-## Test env (test)
+## Run linter (test)
 
 ```sh
-yarn run lint
+yarn lint
+```
+
+## Fix linter errors (test)
+
+```sh
+yarn cs-fix
 ```
