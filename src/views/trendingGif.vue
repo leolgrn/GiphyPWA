@@ -21,8 +21,9 @@ export default {
             dataService
                 .getTrendingGif()
                 .then(response => {
-                    console.log(response.data.data);
-                    this.gifs = response.data.data;
+                    if (response.ok) {
+                        response.json().then(json => (this.gifs = json.data));
+                    }
                 })
                 .catch(err => console.log(err));
         },

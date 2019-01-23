@@ -1,20 +1,18 @@
-import axios from 'axios';
-
 const host = process.env.VUE_APP_GIPHY_API_HOST;
-const params = {
-    params: {
-        api_key: process.env.VUE_APP_GIPHY_API_KEY,
-    },
+const api_key = process.env.VUE_APP_GIPHY_API_KEY;
+const fetchParams = {
+    method: 'GET',
+    mode: 'cors',
 };
 
 export default {
     getRandomGif() {
-        return axios.get(host + '/v1/gifs/random', params);
+        return fetch(host + '/v1/gifs/random?api_key=' + api_key, fetchParams);
     },
     getTrendingGif() {
-        return axios.get(host + '/v1/gifs/trending', params);
+        return fetch(host + '/v1/gifs/trending?api_key=' + api_key, fetchParams);
     },
     getRandomSticker() {
-        return axios.get(host + '/v1/stickers/random', params);
+        return fetch(host + '/v1/stickers/random?api_key=' + api_key, fetchParams);
     },
 };
