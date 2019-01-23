@@ -17,8 +17,9 @@ export default {
             dataService
                 .getRandomGif()
                 .then(response => {
-                    console.log(response);
-                    this.gif = response.data.data;
+                    if (response.ok) {
+                        response.json().then(json => (this.gif = json.data));
+                    }
                 })
                 .catch(err => console.log(err));
         },
