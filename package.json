@@ -5,8 +5,8 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "eslint src/",
-    "cs-fix": "eslint --fix src/",
+    "lint": "eslint src/ --ext .js,.vue",
+    "cs-fix": "eslint --fix src/ --ext .js,.vue",
     "postinstall": "npm run build",
     "start": "node server.js"
   },
