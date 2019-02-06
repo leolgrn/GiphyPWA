@@ -18,11 +18,24 @@ export default {
                 .getRandomGif()
                 .then(response => {
                     if (response.ok) {
-                        response.json().then(json => (this.gif = json.data));
+                        response.json()
+                            .then(json => { 
+                                this.gif = json.data;
+                                this.saveGifToCache(this.gif);
+                            })
+                            .catch(err => console.log(err));
+                        
                     }
                 })
                 .catch(err => console.log(err));
         },
+        saveGifToCache(gif) {
+            caches.open(process.env.CACHE_NAME)
+                .then(cache => {
+                    cache.add(gif.images.downsized.url);
+                })
+                .catch(err => console.log(err));
+        }
     },
     mounted() {
         this.getRandomGif();
