@@ -22,24 +22,24 @@ export default {
                 .getTrendingGif()
                 .then(response => {
                     if (response.ok) {
-                        response.json()
-                            .then(json => {
-                                this.gifs = json.data;
-                                this.saveGifsToCache(this.gifs);
-                            });
+                        response.json().then(json => {
+                            this.gifs = json.data;
+                            this.saveGifsToCache(this.gifs);
+                        });
                     }
                 })
                 .catch(err => console.log(err));
         },
         saveGifsToCache(gifs) {
-            caches.open(process.env.CACHE_NAME)
+            caches
+                .open(process.env.CACHE_NAME)
                 .then(cache => {
                     gifs.forEach(gif => {
                         cache.add(gif.images.downsized.url);
-                    })
+                    });
                 })
                 .catch(err => console.log(err));
-        }
+        },
     },
     mounted() {
         this.getTrendingGif();
