@@ -8,4 +8,5 @@ module.exports = {
             msTileImage: 'favicon.png',
         },
     },
+    productionSourceMap: false,
 };
