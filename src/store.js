@@ -12,19 +12,23 @@ export default new Vuex.Store({
         trendingGifs: [],
         randomGif: {},
         randomSticker: {},
+        online: navigator.onLine,
     },
     mutations: {
         setShrinkedNavigation(state, payload) {
             state.shrinkedNavigation = payload.shrinkedNavigation;
         },
         setTrendingGifs(state, payload) {
-            state.trendingGifs = payload;
+            state.trendingGifs = payload.trendingGifs;
         },
         setRandomGif(state, payload) {
-            state.randomGif = payload;
+            state.randomGif = payload.randomGif;
         },
         setRandomSticker(state, payload) {
-            state.randomSticker = payload;
+            state.randomSticker = payload.randomSticker;
+        },
+        setOnline(state, payload) {
+            state.online = payload.online;
         },
     },
     actions: {
@@ -32,31 +36,31 @@ export default new Vuex.Store({
             const response = await fetch(`${apiUrl}/v1/gifs/trending?api_key=${apiKey}`);
 
             if (!response.ok) {
-                commit('setTrendingGifs', []);
+                commit('setTrendingGifs', { trendingGifs: [] });
                 console.error(response.statusText);
             }
 
-            commit('setTrendingGifs', (await response.json()).data);
+            commit('setTrendingGifs', { trendingGifs: (await response.json()).data });
         },
         async getRandomGif({ commit }) {
             const response = await fetch(`${apiUrl}/v1/gifs/random?api_key=${apiKey}`);
 
             if (!response.ok) {
-                commit('setRandomGif', []);
+                commit('setRandomGif', { randomGif: [] });
                 console.error(response.statusText);
             }
 
-            commit('setRandomGif', (await response.json()).data);
+            commit('setRandomGif', { randomGif: (await response.json()).data });
         },
         async getRandomSticker({ commit }) {
             const response = await fetch(`${apiUrl}/v1/stickers/random?api_key=${apiKey}`);
 
             if (!response.ok) {
-                commit('setRandomSticker', []);
+                commit('setRandomSticker', { randomSticker: [] });
                 console.error(response.statusText);
             }
 
-            commit('setRandomSticker', (await response.json()).data);
+            commit('setRandomSticker', { randomSticker: (await response.json()).data });
         },
     },
 });

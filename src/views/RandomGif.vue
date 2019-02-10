@@ -1,7 +1,13 @@
 <template>
     <v-container fluid pt-1>
         <h1 class="mt-3 mb-2 headline">Random Gif</h1>
-        <v-btn aria-label="Randomize" name="randomize" color="light-blue" class="ml-0 mb-4" @click="getNewRandomGif()"
+        <v-btn
+            aria-label="Randomize"
+            name="randomize"
+            color="light-blue"
+            class="ml-0 mb-4"
+            @click="getNewRandomGif()"
+            :disabled="!online"
             >Randomize</v-btn
         >
         <v-card flat tile v-if="gif.title" class="gif">
@@ -17,13 +23,14 @@
 </template>
 
 <script>
+import { mapState } from 'vuex';
+
 export default {
     name: 'RandomGif',
-    computed: {
-        gif() {
-            return this.$store.state.randomGif;
-        },
-    },
+    computed: mapState({
+        gif: state => state.randomGif,
+        online: state => state.online,
+    }),
     methods: {
         getNewRandomGif() {
             this.$store.dispatch('getRandomGif');
