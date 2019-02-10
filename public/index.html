@@ -1,27 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
-    <title>giphypwa</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-      crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
-      crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
-      crossorigin="anonymous">
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
-      crossorigin="anonymous"></script>
-  </head>
-  <body>
-    <noscript>
-      <strong>We're sorry but giphypwa doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
-    </noscript>
-    <div id="app"></div>
-    <!-- built files will be auto injected -->
-  </body>
+    <head>
+        <title>Gifffle</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <meta name="theme-color" content="#03A9F4" />
+        <meta name="description" content="Find the latest trending gifs on Gifffle. Instantly make your world prettier. Live the gif-life." />
+        <link rel="icon" href="<%= BASE_URL %>favicon.png">
+        <link rel="manifest" href="<%= BASE_URL %>manifest.json" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons">
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+            }
+
+            .noscript {
+                align-items: center;
+                background: #424242;
+                color: white;
+                display: flex;
+                justify-content: center;
+                min-height: 100vh;
+                text-align: center;
+            }
+
+            .noscript-img {
+                filter: grayscale(100%);
+                margin-top: 1rem;
+                -webkit-filter: grayscale(100%);
+                width: 10rem;
+            }
+        </style>
+    </head>
+    <body>
+        <noscript>
+            <div class="noscript">
+                <div class="noscript-content">
+                    <div>
+                        Oooh No... :(<br />
+                        Gifffle can not work properly without JavaScript enabled. Please enable it ❤️.
+                    </div>
+                    <img src="img/icons/android-512.png" alt="App Icon" class="noscript-img" />
+                </div>
+            </div>
+        </noscript>
+        <div id="app"></div>
+    </body>
 </html>

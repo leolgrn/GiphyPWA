@@ -1,4 +1,4 @@
-var CACHE_NAME = 'giphypwa-v1';
+var CACHE_NAME = 'gifffle';
 var urlsToCache = ['/index.html'];
 
 self.addEventListener('install', function(event) {

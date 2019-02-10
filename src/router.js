@@ -4,21 +4,31 @@ import Router from 'vue-router';
 Vue.use(Router);
 
 export default new Router({
+    mode: 'history',
     routes: [
         {
             path: '/',
-            name: 'trending_gif',
-            component: () => import('./views/trendingGif.vue'),
+            name: 'Trending Gifs',
+            icon: 'view_module',
+            component: () => import('@/views/TrendingGifs.vue'),
         },
         {
             path: '/random/gif',
-            name: 'random_gif',
-            component: () => import('./views/randomGif.vue'),
+            name: 'Random Gif',
+            icon: 'casino',
+            component: () => import('@/views/RandomGif.vue'),
         },
         {
             path: '/random/sticker',
-            name: 'random_sticker',
-            component: () => import('./views/randomSticker.vue'),
+            name: 'Random Sticker',
+            icon: 'sentiment_satisfied_alt',
+            component: () => import('@/views/RandomSticker.vue'),
+        },
+        {
+            path: '/search',
+            name: 'Search',
+            icon: 'search',
+            component: () => import('@/views/Search.vue'),
         },
     ],
 });

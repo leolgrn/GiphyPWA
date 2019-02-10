@@ -1,33 +1,30 @@
 <template>
-    <div id="app">
-        <div id="nav">
-            <router-link to="/">Trending GIFS</router-link> | <router-link to="/random/gif">Random GIFS</router-link> |
-            <router-link to="/random/sticker">Random Stickers</router-link>
-        </div>
-        <router-view />
-    </div>
+    <v-app dark>
+        <app-navigation />
+        <v-content class="content"> <router-view /> </v-content>
+    </v-app>
 </template>
 
-<style>
-#app {
-    font-family: 'Avenir', Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #2c3e50;
-    background: rgb(224, 224, 224);
-}
+<script>
+import AppNavigation from '@/components/AppNavigation';
 
-#nav {
-    padding: 30px;
-}
+export default {
+    name: 'App',
+    components: {
+        AppNavigation,
+    },
+    beforeMount() {
+        this.$store.dispatch('getTrendingGifs');
+        this.$store.dispatch('getRandomGif');
+        this.$store.dispatch('getRandomSticker');
+    },
+};
+</script>
 
-#nav a {
-    font-weight: bold;
-    color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-    color: #42b983;
+<style scoped>
+@media screen and (max-width: 600px) {
+    .content {
+        padding-left: 60px !important;
+    }
 }
 </style>
