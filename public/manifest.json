@@ -1,6 +1,7 @@
 {
   "name": "Gifffle",
   "short_name": "Gifffle",
+  "description": "Find the latest trending gifs on Gifffle.",
   "icons": [
     {
       "src": "./img/icons/android-192.png",
@@ -15,6 +16,7 @@
   ],
   "start_url": "./index.html",
   "display": "standalone",
-  "background_color": "#000000",
+  "orientation": "portrait",
+  "background_color": "#303030",
   "theme_color": "#03A9F4"
 }

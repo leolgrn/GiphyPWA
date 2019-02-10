@@ -7,6 +7,7 @@
             color="light-blue"
             class="ml-0 mb-4"
             @click="getNewRandomSticker()"
+            :disabled="!online"
             >Randomize</v-btn
         >
         <v-card flat tile v-if="sticker.title" class="sticker">
@@ -22,13 +23,14 @@
 </template>
 
 <script>
+import { mapState } from 'vuex';
+
 export default {
     name: 'RandomSticker',
-    computed: {
-        sticker() {
-            return this.$store.state.randomSticker;
-        },
-    },
+    computed: mapState({
+        sticker: state => state.randomSticker,
+        online: state => state.online,
+    }),
     methods: {
         getNewRandomSticker() {
             this.$store.dispatch('getRandomSticker');
