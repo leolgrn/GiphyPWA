@@ -13,7 +13,7 @@ export default {
     components: {
         AppNavigation,
     },
-    beforeMount() {
+    mounted() {
         this.$store.dispatch('getTrendingGifs');
         this.$store.dispatch('getRandomGif');
         this.$store.dispatch('getRandomSticker');

@@ -1,7 +1,9 @@
 <template>
     <v-container fluid pt-1>
         <h1 class="mt-3 mb-2 headline">Random Gif</h1>
-        <v-btn name="randomize" color="light-blue" class="ml-0 mb-4" @click="getNewRandomGif()">Randomize</v-btn>
+        <v-btn aria-label="Randomize" name="randomize" color="light-blue" class="ml-0 mb-4" @click="getNewRandomGif()"
+            >Randomize</v-btn
+        >
         <v-card flat tile v-if="gif.title" class="gif">
             <v-img
                 :src="gif.images.fixed_width.webp"

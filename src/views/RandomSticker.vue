@@ -1,7 +1,14 @@
 <template>
     <v-container fluid pt-1>
         <h1 class="mt-3 mb-2 headline">Random Sticker</h1>
-        <v-btn name="randomize" color="light-blue" class="ml-0 mb-4" @click="getNewRandomSticker()">Randomize</v-btn>
+        <v-btn
+            aria-label="Randomize"
+            name="randomize"
+            color="light-blue"
+            class="ml-0 mb-4"
+            @click="getNewRandomSticker()"
+            >Randomize</v-btn
+        >
         <v-card flat tile v-if="sticker.title" class="sticker">
             <v-img
                 :src="sticker.images.fixed_width.webp"
