@@ -1,0 +1,27 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.noscript, .wrapper-404 {
+    align-items: center;
+    background: #424242;
+    color: black;
+    display: flex;
+    font-family: Roboto, sans-serif;
+    justify-content: center;
+    min-height: 100vh;
+    text-align: center;
+}
+
+.noscript h1, .wrapper-404 h1 {
+    font-weight: 300;
+    font-size: 1.5rem;
+}
+
+.noscript-img, .wrapper-404-img {
+    filter: grayscale(100%);
+    margin-top: 1rem;
+    -webkit-filter: grayscale(100%);
+    width: 10rem;
+}
