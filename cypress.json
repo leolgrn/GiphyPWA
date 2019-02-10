@@ -1,0 +1,6 @@
+{
+    "baseUrl": "http://localhost:5000",
+    "chromeWebSecurity": false,
+    "video": false,
+    "screenshotOnRunFailure": false
+}
