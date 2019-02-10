@@ -18,7 +18,12 @@
             </v-list>
         </v-navigation-drawer>
         <v-toolbar app fixed clipped-left>
-            <v-toolbar-side-icon name="Navigation Switch" class="mr-0" @click="toggleNavigation()" />
+            <v-toolbar-side-icon
+                aria-label="Navigation Switch"
+                name="Navigation Switch"
+                class="mr-0"
+                @click="toggleNavigation()"
+            />
             <v-img :src="require('../assets/logo-small.gif')" contain class="logo" />
             <v-toolbar-title class="headline text-uppercase ml-0">Gifffle</v-toolbar-title>
         </v-toolbar>
