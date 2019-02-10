@@ -1,6 +1,8 @@
 [![Build Status](https://travis-ci.org/leolgrn/GiphyPWA.svg?branch=master)](https://travis-ci.org/leolgrn/GiphyPWA)
 
-# GiphyPWA
+# Gifffle
+
+Gifffle is a PWA app which gets gifs from Giphy API and displays them.
 
 ## Installation (local/prod)
 
