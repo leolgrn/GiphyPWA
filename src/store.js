@@ -12,6 +12,7 @@ export default new Vuex.Store({
         trendingGifs: [],
         randomGif: {},
         randomSticker: {},
+        searchGifs: [],
         online: navigator.onLine,
     },
     mutations: {
@@ -29,6 +30,9 @@ export default new Vuex.Store({
         },
         setOnline(state, payload) {
             state.online = payload.online;
+        },
+        setSearchGifs(state, payload) {
+            state.searchGifs = payload.searchGifs;
         },
     },
     actions: {
@@ -61,6 +65,16 @@ export default new Vuex.Store({
             }
 
             commit('setRandomSticker', { randomSticker: (await response.json()).data });
+        },
+        async searchGifs({ commit }, { query }) {
+            const response = await fetch(`${apiUrl}/v1/gifs/search?api_key=${apiKey}&q=${query}`);
+
+            if (!response.ok) {
+                commit('setSearchGifs', { searchGifs: [] });
+                console.error(response.statusText);
+            }
+
+            commit('setSearchGifs', { searchGifs: (await response.json()).data });
         },
     },
 });
