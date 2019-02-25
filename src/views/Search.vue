@@ -4,14 +4,16 @@
         <v-form ref="form" v-model="valid" class="mt-4 mb-4" lazy-validation v-on:submit.prevent>
             <v-flex xs12 sm6 md4 lg3>
                 <v-text-field
-                    placeholder="cheeseburgers"
+                    label="Search"
                     append-icon="search"
+                    single-line
+                    placeholder="cheeseburgers"
                     class="mt-0 pt-0 ml-0"
                     :disabled="!online"
                     :rules="inputRules"
                     required
                     v-on:keyup.13="searchNewGifs()"
-                    v-model="query"
+                    v-model="searchQuery"
                 />
             </v-flex>
             <v-btn
@@ -46,20 +48,29 @@ export default {
     name: 'Search',
     data: () => ({
         valid: true,
-        query: '',
         inputRules: [
             v => !!v || 'Search term is required.',
             v => (v && v.length >= 3 && v.length <= 20) || 'Search term must contain between 3 and 20 characters.',
         ],
     }),
-    computed: mapState({
-        searchGifs: state => state.searchGifs,
-        online: state => state.online,
-    }),
+    computed: {
+        searchQuery: {
+            get() {
+                return this.$store.state.searchQuery;
+            },
+            set(searchQuery) {
+                this.$store.commit('setSearchQuery', { searchQuery });
+            },
+        },
+        ...mapState({
+            searchGifs: state => state.searchGifs,
+            online: state => state.online,
+        }),
+    },
     methods: {
         searchNewGifs() {
             if (this.$refs.form.validate()) {
-                this.$store.dispatch('searchGifs', { query: this.$data.query });
+                this.$store.dispatch('searchGifs', { query: this.searchQuery });
             }
         },
     },

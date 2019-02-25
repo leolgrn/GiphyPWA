@@ -13,6 +13,7 @@ export default new Vuex.Store({
         randomGif: {},
         randomSticker: {},
         searchGifs: [],
+        searchQuery: '',
         online: navigator.onLine,
     },
     mutations: {
@@ -28,11 +29,14 @@ export default new Vuex.Store({
         setRandomSticker(state, payload) {
             state.randomSticker = payload.randomSticker;
         },
-        setOnline(state, payload) {
-            state.online = payload.online;
-        },
         setSearchGifs(state, payload) {
             state.searchGifs = payload.searchGifs;
+        },
+        setSearchQuery(state, payload) {
+            state.searchQuery = payload.searchQuery;
+        },
+        setOnline(state, payload) {
+            state.online = payload.online;
         },
     },
     actions: {
