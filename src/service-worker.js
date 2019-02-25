@@ -1,5 +1,5 @@
 var CACHE_NAME = 'gifffle';
-var urlsToCache = ['/index.html'];
+var urlsToCache = ['/', '/index.html', '/random/gif', '/random/sticker', '/search'];
 
 self.addEventListener('install', function(event) {
     // Perform install steps
