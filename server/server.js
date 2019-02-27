@@ -2,7 +2,6 @@ const express = require('express');
 const serveStatic = require('serve-static');
 const enforce = require('express-sslify');
 const compression = require('compression');
-const history = require('connect-history-api-fallback');
 const is404Middleware = require('./is404Middleware');
 
 const app = express();
@@ -12,7 +11,6 @@ const isProduction = process.env.NODE_ENV === 'production';
 // Custom middleware to re-enable 404
 app.use(is404Middleware);
 
-app.use(history());
 app.use(compression());
 
 if (isProduction) {
