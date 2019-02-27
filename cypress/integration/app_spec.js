@@ -29,19 +29,19 @@ describe('SPA API', () => {
     });
 
     it('Gets /random/gif', () => {
-        cy.request('/random/gif')
+        cy.request('/#/random/gif')
             .its('status')
             .should('eq', 200);
     });
 
     it('Gets /random/sticker', () => {
-        cy.request('/random/sticker')
+        cy.request('/#/random/sticker')
             .its('status')
             .should('eq', 200);
     });
 
     it('Gets /search', () => {
-        cy.request('/search')
+        cy.request('/#/search')
             .its('status')
             .should('eq', 200);
     });
